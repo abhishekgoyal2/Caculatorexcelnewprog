@@ -31,13 +31,12 @@ static int Opvalcell ;
 		public static void main(String[] args) throws IOException {
 			// TODO Auto-generated method stub
 	              
-			fis =new FileInputStream("D:\\automationXpath\\Excel_Operands.xlsx");
+			fis =new FileInputStream("D:\\automationXpath\\Cal.xlsx");
 
 		      
 		operand=getspecificCelldata(operand);
-		System.out.println();
+		System.out.println(operand);
 		
-		fis.close();
 		
 }
 	
@@ -88,6 +87,8 @@ static int Opvalcell ;
 				 int valC =(int) cell.getNumericCellValue();
 
 				System.out.println("Value of cell after calcultion : " + " of .."+ operand + "..  " +valC);
+				fis.close();
+
 			fileout = new FileOutputStream("D:\\automationXpath\\Cal.xlsx");
 		            wb.write(fileout);
 		           
@@ -110,6 +111,8 @@ static int Opvalcell ;
 					 int valC =(int) cell.getNumericCellValue();
 
 						System.out.println("Value of cell after calcultion : " + " of .."+ operand + "..  " +valC);
+						fis.close();
+
 						fileout = new FileOutputStream("D:\\automationXpath\\Cal.xlsx");
 					            wb.write(fileout);
 					            fis.close();
@@ -129,6 +132,8 @@ static int Opvalcell ;
 					 int valC =(int) cell.getNumericCellValue();
 
 						System.out.println("Value of cell after calcultion : " + " of .."+ operand + "..  " +valC);
+						fis.close();
+
 						fileout = new FileOutputStream("D:\\automationXpath\\Cal.xlsx");
 					            wb.write(fileout);
 					            fis.close();
@@ -147,6 +152,8 @@ static int Opvalcell ;
 					 int valC =(int) cell.getNumericCellValue();
 
 						System.out.println("Value of cell after calcultion : " + " of .."+ operand + "..  " +valC);
+						fis.close();
+
 						fileout = new FileOutputStream("D:\\automationXpath\\Cal.xlsx");
 					            wb.write(fileout);
 					            fis.close();
@@ -154,18 +161,20 @@ static int Opvalcell ;
 				
 				else if(operand.equalsIgnoreCase("%"))
 				{
-					System.out.println("Call  percentage operand");
+					System.out.println("Call  Modulo operand");
 
 					
-					Percentage per = new Percentage();
+					Modulo mod = new Modulo();
 					
-					 int c = per.calculate(operand,valA,valB);
+					 int c = mod.calculate(operand,valA,valB);
 					System.out.println("Final value : " +c);
 					cell.setCellValue(c);
 					
 					 int valC =(int) cell.getNumericCellValue();
 
 						System.out.println("Value of cell after calcultion : " + " of .."+ operand + "..  " +valC);
+						fis.close();
+
 						fileout = new FileOutputStream("D:\\automationXpath\\Cal.xlsx");
 					            wb.write(fileout);
 					            fis.close();
@@ -188,6 +197,8 @@ static int Opvalcell ;
 			
 			
 			}
+		 
+		 
 		
 		
 //	
